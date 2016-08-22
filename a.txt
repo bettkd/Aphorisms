@@ -1,0 +1,63 @@
+['William  Shakespeare']
+***********************************************
+**********************************
+['<br/><strong>Money may not buy happiness, but I`d rather cry in a Jaguar than on a bus. <p style="text-align: right"><a href="authors.php?aut_id=709"> Francoise  Sagan']
+***********************************************
+**********************************
+['<br/><strong>Nothing great has great beginnings. <p style="text-align: right"><a href="authors.php?aut_id=608"> Joseph de  Maistre']
+***********************************************
+**********************************
+['<br/><strong>People often grudge others when they cannot enjoy themselves. <p style="text-align: right"><a href="authors.php?aut_id=610">   Aesop']
+***********************************************
+**********************************
+['<br/><strong>History is merely a list of surprises. It can only prepare us to be surprised yet again. <p style="text-align: right"><a href="authors.php?aut_id=679"> Kurt  Vonnegut']
+***********************************************
+**********************************
+['<br/><strong>Conformity is the jailer of freedom and the enemy of growth. <p style="text-align: right"><a href="authors.php?aut_id=681"> John Fitzgerald  Kennedy']
+***********************************************
+**********************************
+['<br/><strong>There are three kinds of people: those who see; those who see when they are shown; and those who cannot see at all. <p style="text-align: right"><a href="authors.php?aut_id=613">   Leonardo da Vinci']
+***********************************************
+**********************************
+['<br/><strong>The mind has great influence over the body, and maladies often have their origin there. <p style="text-align: right"><a href="authors.php?aut_id=717">   Moliere']
+***********************************************
+**********************************
+['<br/><strong>When everything is coming your way, you`re in the wrong lane. <p style="text-align: right"><a href="authors.php?aut_id=651"> Steven  Wright']
+***********************************************
+**********************************
+['<br/><strong>Life grants nothing to us mortals without hard work. <p style="text-align: right"><a href="authors.php?aut_id=618">   Horace']
+***********************************************
+**********************************
+['<br/><strong>The most certain test by which we judge whether a country is really free is the amount of security enjoyed by minorities. <p style="text-align: right"><a href="authors.php?aut_id=622"> John  Acton']
+***********************************************
+**********************************
+['<br/><strong>Only strength can cooperate. Weakness can only beg. <p style="text-align: right"><a href="authors.php?aut_id=700"> Dwight David  Eisenhower']
+***********************************************
+**********************************
+['<br/><strong>A thief believes everybody steals. <p style="text-align: right"><a href="authors.php?aut_id=703"> Edgar Watson  Howe']
+***********************************************
+**********************************
+['<br/><strong>Silence is a source of great strength. <p style="text-align: right"><a href="authors.php?aut_id=689">   Lao Tzu']
+***********************************************
+**********************************
+['<br/><strong>Being powerful is like being a lady. If you have to tell people you are, you aren`t. <p style="text-align: right"><a href="authors.php?aut_id=704"> Margaret  Thatcher']
+***********************************************
+**********************************
+['<br/><strong>I quickly laugh at everything for fear of having to cry. <p style="text-align: right"><a href="authors.php?aut_id=692"> Pierre Auguste Caron de  Beaumarchais']
+***********************************************
+**********************************
+['<br/><strong>We need to love to be healthy, and we might get sick when we have no opportunity to love. <p style="text-align: right"><a href="authors.php?aut_id=603"> Sigmund  Freud']
+***********************************************
+**********************************
+['<br/><strong>War is much too serious a thing to be left to military men. <p style="text-align: right"><a href="authors.php?aut_id=550"> Charles Maurice de  Talleyrand']
+***********************************************
+**********************************
+['<br/><strong>It is always better to be slightly undressed. <p style="text-align: right"><a href="authors.php?aut_id=657"> Coco  Chanel']
+***********************************************
+**********************************
+['<br/><strong>Most people when they come to you for advice, come to have their own opinions strengthened, not corrected. <p style="text-align: right"><a href="authors.php?aut_id=744"> Henry Wheeler  Shaw']
+***********************************************
+**********************************
+[]
+***********************************************
+**********************************
