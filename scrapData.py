@@ -9,9 +9,10 @@ import random
 import re
 from container import Aphorism
 import time
+from json import dumps
 
 '''
-	:params - string URL (youtube url query for song)
+	:params - string url
 	:return - string soup (rendered html)
 '''
 def make_soup(url):
@@ -25,8 +26,9 @@ def make_soup(url):
 	return (soup)
 
 '''
-	:params - string URL (youtube url query for song)
-	:return - string URI (best videoID for given song)
+	:summary - scraping the aphorims from a given url
+	:params - string url
+	:return - list Aphorism
 '''
 def scrapData(url):
 	aphorisms = []
@@ -57,36 +59,35 @@ def scrapData(url):
 		aphorisms.append(Aphorism(_theme, _author, _text))
 	return aphorisms
 
-
+'''
+	:summary - executes scraping
+	:params - none
+	:return - none
+'''
 def main():
 	base_url = "http://www.aphorism4all.com/all_aforism.php?all=all&p="
-	pages = range(11,25)
+	pages = range(176)
 	random.shuffle(pages)
 
 	collection = []
 
 	for page in pages:
 		url = base_url + str(page)
-		print "Loading: " + url
+		#print "Loading: " + url
 		try:
 			aphorisms = scrapData(url)
 			collection.extend(aphorisms)
 		except Exception, e:
-			print "--::Error: %s" % e
+			#print "--::Error: %s" % e
 			time.sleep(5)
 			pages.append(page)
 			continue
 	
-	for item in collection:
-		print item.text
+	def obj_dict(obj):
+		return obj.__dict__
+	data = dumps(collection, default=obj_dict)
 
-	print "Retrieved %d" % len(collection)
-	print "Expected %d" % (len(pages) * 20)
-
-
-	#for aphorism in aphorisms:
-	#	print aphorism.theme
-		#pass
+	print data
 
 if __name__ == '__main__':
 	main()
