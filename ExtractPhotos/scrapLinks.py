@@ -61,7 +61,7 @@ def getSecondaryURLs(uri):
 def main():
 	targetURI = "https://pixabay.com/en/photos/?orientation=vertical&image_type=photo&cat=nature&min_height=&colors=green&min_width=&order=popular&pagi="
 	pagesCount = 144
-	pages = random.sample(range(1,pagesCount), 3)
+	pages = random.sample(range(1,pagesCount), 15)
 
 	print "PAGES: %s" % " ". join(map(str, pages))
 
@@ -82,8 +82,8 @@ def main():
 			threads.append(t)
 
 		for t in threads:
-			t.join();
-			
+			t.join()
+
 	except Exception, e:
 		print e
 
