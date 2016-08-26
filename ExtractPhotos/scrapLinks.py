@@ -25,6 +25,11 @@ def make_soup(url):
 	soup.prettify()
 	return (soup)
 
+'''
+	:summary - yield the URI of the image from the page
+	:params - string url
+	:return - generator string URIs
+'''
 def getPrimaryURIs(url):
 	soup = make_soup(url)
 
@@ -35,12 +40,22 @@ def getPrimaryURIs(url):
 		uri = base_uri + item.find_all("a")[0].get("href")
 		yield uri
 
+'''
+	:summary - retrieve the URL of the image from the page
+	:params - string uri
+	:return - string url of image
+'''
 def getSecondaryURLs(uri):
 	soup = make_soup(uri)
 
-	image = base_uri + soup.find_all("img", {"itemprop": lambda x: x and x == "contentURL"})[0].get("src")
-	return image
+	imageURL = base_uri + soup.find_all("img", {"itemprop": lambda x: x and x == "contentURL"})[0].get("src")
+	return imageURL
 
+'''
+	:summary - executes scraping
+	:params - none
+	:return - none
+'''
 def main():
 	targetURI = "https://pixabay.com/en/photos/?orientation=vertical&image_type=photo&cat=nature&min_height=&colors=green&min_width=&order=popular&pagi="
 	pagesCount = 144
