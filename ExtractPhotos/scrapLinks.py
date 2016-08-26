@@ -6,8 +6,10 @@ import csv
 import cookielib
 from cookielib import CookieJar
 import random
+import threading
+import Queue
 
-
+q = Queue.Queue() # Thread queue
 base_uri = "https://pixabay.com/"
 
 '''
@@ -37,7 +39,7 @@ def getPrimaryURIs(url):
         {"class": lambda x: x and x == "item"})
 
 	for item in items:
-		uri = base_uri + item.find_all("a")[0].get("href")
+		uri = base_uri + item.find_all("a")[0].get("href").strip()
 		yield uri
 
 '''
@@ -48,7 +50,7 @@ def getPrimaryURIs(url):
 def getSecondaryURLs(uri):
 	soup = make_soup(uri)
 
-	imageURL = base_uri + soup.find_all("img", {"itemprop": lambda x: x and x == "contentURL"})[0].get("src")
+	imageURL = base_uri + soup.find_all("img", {"itemprop": lambda x: x and x == "contentURL"})[0].get("src").strip()
 	return imageURL
 
 '''
@@ -59,23 +61,38 @@ def getSecondaryURLs(uri):
 def main():
 	targetURI = "https://pixabay.com/en/photos/?orientation=vertical&image_type=photo&cat=nature&min_height=&colors=green&min_width=&order=popular&pagi="
 	pagesCount = 144
+	pages = random.sample(range(1,pagesCount), 3)
+
+	print "PAGES: %s" % " ". join(map(str, pages))
 
 	try:
-		f = open('imageURLData.txt','a')
-		for page in range(pagesCount):
-			page += 1
-			print "******* PAGE %d *********" % page  
-			targetURL = targetURI + str(page)
+		def processURLs():
 			imageURIs = getPrimaryURIs(targetURL)
 			for imageURI in imageURIs:
 				print "Image: %s" % imageURI
 				imageURL = getSecondaryURLs(imageURI)
-				f.write(imageURL + "\n")
+				imageURLs.append(imageURL)
 
-		f.close()
+		imageURLs = []
+		threads = []
+		for page in pages:
+			targetURL = targetURI + str(page)
+			t = threading.Thread(target=processURLs)
+			t.start()
+			threads.append(t)
+
+		for t in threads:
+			t.join();
+			
 	except Exception, e:
-		print "ERROR ENCOUNTERED, PASSED"
-		pass
+		print e
+
+	f = open('imageURLData.txt','a')
+	for line in imageURLs:
+		print "Writing image: %s" % line
+		f.write(line + "\n")
+	f.close()
+	print "DONE!"
 
 if __name__ == '__main__':
 	main()
