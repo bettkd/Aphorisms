@@ -12,6 +12,7 @@ import time
 from json import dumps
 
 '''
+	:summary - get the html object from a url
 	:params - string url
 	:return - string soup (rendered html)
 '''
