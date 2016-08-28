@@ -7,8 +7,8 @@ import re
 
 cloudinary.config( 
   cloud_name = "dominicbett", 
-  api_key = "897862564791181", 
-  api_secret = "AJcDSocxqA4wrXSxqxD06iHtnDY" 
+  api_key = "897862543535181", 
+  api_secret = "AJcDSocxqA43s5sf3qxD06" 
 )
 
 class Images:
@@ -17,17 +17,22 @@ class Images:
 		self.url = url
 
 cloudinaryURLs = []
+
 with open("../ExtractPhotos/imageURLData.txt", 'r') as lines:
 	for line in lines:
-		url = line.strip()
-		print "Uploading: %s" % url
-		image_name = url.split("/")[-1]
-		response = cloudinary.uploader.upload(url, public_id=image_name, folder="Aphorites/")
-		cloudinaryURL = response["url"]
-		name = re.findall(r"(.*?)-[0-9_]+?\.[a-z]+", image_name)[0]
-		name = name.replace("-", " ")
-		image = Images(name, cloudinaryURL)
-		cloudinaryURLs.append(image)
+		try:
+			url = line.strip()
+			print "Uploading: %s" % url
+			image_name = url.split("/")[-1].split(".")[0]
+			response = cloudinary.uploader.upload(url, public_id=image_name, folder="Aphorites/")
+			cloudinaryURL = response["url"]
+			name = re.findall(r"(.*?)-[0-9_]+?", image_name)[0]
+			name = name.replace("-", " ")
+			image = Images(name, cloudinaryURL)
+			cloudinaryURLs.append(image)
+		except Exception, e:
+			print e
+			continue
 
 def obj_dict(obj):
 		return obj.__dict__
